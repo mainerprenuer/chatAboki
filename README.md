@@ -1,2 +1,2 @@
 # chatAboki
-Chatbot with Aboki
+Aboki Chatbot
