@@ -9,7 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@clerk/nextjs": "^4.29.2",
+    "@clerk/nextjs": "^4.29.3",
     "@neondatabase/serverless": "^0.7.2",
     "@radix-ui/react-slot": "^1.0.2",
     "aws-sdk": "^2.1535.0",
