@@ -1,13 +1,12 @@
-import { PineconeClient } from '@pinecone-database/pinecone'
+import { Pinecone } from '@pinecone-database/pinecone';
 import { downloadFromS3 } from './s3-server';
 import {PDFLoader} from 'langchain/document_loaders/fs/pdf'
 
-let pinecone: PineconeClient | null = null;
+let pinecone: Pinecone | null = null;
 
-export const getPineconeClient = async () => {
+export const getPinecone = async () => {
     if (!pinecone) {
-        pinecone = new PineconeClient()
-        await pinecone.init({
+       const pinecone =  new Pinecone({
             environment:process.env.PINECONE_ENVIRONMENT!,
             apiKey: process.env.PINECONE_API_KEY!
         })
