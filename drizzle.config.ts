@@ -10,5 +10,6 @@ export default {
     }
 } satisfies Config;
 
+
 //  this ensures our neon db schema is synced to migration
 //npx drizzle-kit push:pg
