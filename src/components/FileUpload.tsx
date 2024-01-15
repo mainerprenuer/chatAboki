@@ -6,10 +6,12 @@ import { Inbox, Loader2 } from 'lucide-react'
 import React from 'react'
 import { useDropzone } from 'react-dropzone'
 import axios from 'axios'
-import toast from 'react-hot-toast'
+import { toast } from 'react-hot-toast'
+import { useRouter } from 'next/navigation'
 
 const FileUpload = () => {
-        const [ uploading, setUploading ] = React.useState(false);
+        const router = useRouter()
+    const [ uploading, setUploading ] = React.useState(false);
     const {mutate} = useMutation({
         mutationFn: async ({
             file_key,
@@ -47,12 +49,14 @@ const FileUpload = () => {
                     return;
                 }
                 mutate(data, {
-                    onSuccess:(data) => {
-                        console.log(data);
-                        // toast.success(data.message)
+                    onSuccess:(chat_id) => {
+                        // console.log(data);
+                        toast.success("Chat created")
+                        router.push(`/chat/${chat_id}`)
                     },
                     onError: (err) => {
                         toast.error("Error creating chat");
+                        console.log(err);
                     },
                 });
             } catch (error) {
