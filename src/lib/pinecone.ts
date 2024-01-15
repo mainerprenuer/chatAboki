@@ -33,8 +33,13 @@ export async function loadS3IntoPinecone(fileKey: string) {
     const pages = (await loader.load()) as PDFPage[];
 
     //2. split and segement the pdf into smaller paragraphs
-    // return pages;   
+    // return pages;  
+    //pages = array(10)
     const documents = await Promise.all(pages.map(prepareDocument));
+    //documents = array(98)
+
+    //3. vectorize and embed individual documents
+    
 }
 
 //truncate paragraphs to pinecone byte sizes 36000
