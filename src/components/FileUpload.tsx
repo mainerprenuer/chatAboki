@@ -10,13 +10,13 @@ import { toast } from 'react-hot-toast'
 import { useRouter } from 'next/navigation'
 
 const FileUpload = () => {
-        const router = useRouter()
+        const router = useRouter();
     const [ uploading, setUploading ] = React.useState(false);
     const {mutate} = useMutation({
         mutationFn: async ({
             file_key,
             file_name,
-        } : { 
+        } : {  
             file_key: string;
             file_name: string;
         }) => {
@@ -49,10 +49,10 @@ const FileUpload = () => {
                     return;
                 }
                 mutate(data, {
-                    onSuccess:(chat_id) => {
+                    onSuccess:({chat_id}) => {
                         // console.log(data);
-                        toast.success("Chat created")
-                        router.push(`/chat/${chat_id}`)
+                        toast.success("Chat created!")
+                        router.push(`/chat/${chat_id}`);
                     },
                     onError: (err) => {
                         toast.error("Error creating chat");
