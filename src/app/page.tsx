@@ -6,7 +6,7 @@ import { chats } from "@/lib/db/schema";
 import { checkSubscription } from "@/lib/subscription";
 import { UserButton, auth } from "@clerk/nextjs";
 import { eq } from "drizzle-orm";
-import { ArrowRight, LogIn, LogInIcon } from "lucide-react";
+import { ArrowRight, LogIn } from "lucide-react";
 import Link from "next/link";
 
 export default async function Home() {
