@@ -9,7 +9,7 @@ export async function uploadToS3(file: File) {
             params: {
                 Bucket: process.env.NEXT_PUBLIC_S3_BUCKET_NAME, 
             },
-            region: 'us-east-2'
+            region: 'eu-north-1'
         })
 
         const file_key = 'uploads/' + Date.now().toString() + file.name.replace(' ', '-')
@@ -33,7 +33,7 @@ export async function uploadToS3(file: File) {
     } catch (error) {}
 }
     export function getS3Url(file_key: string) {
-        const url = `https://${process.env.NEXT_PUBLIC_S3_BUCKET_NAME}.s3.us-east-2.amazonaws.com/${file_key}`;
+        const url = `https://${process.env.NEXT_PUBLIC_S3_BUCKET_NAME}.s3.eu-north-1.amazonaws.com/${file_key}`;
         return url;
     }
     
@@ -53,7 +53,7 @@ export async function uploadToS3(file: File) {
 //             params: {
 //                 Bucket: process.env.NEXT_PUBLIC_S3_BUCKET_NAME, 
 //             },
-//             region: 'us-east-2'
+//             region: 'eu-north-1'
 //         });
 //         const params = {
 //             Bucket: process.env.NEXT_PUBLIC_S3_BUCKET_NAME!,
@@ -78,7 +78,7 @@ export async function uploadToS3(file: File) {
 // //   return new Promise((resolve, reject) => {
 // //     try {
 // //       const s3 = new S3({
-// //         region: "us-east-2",
+// //         region: "eu-north-1",
 // //         credentials: {
 // //           accessKeyId: process.env.NEXT_PUBLIC_S3_ACCESS_KEY_ID!,
 // //           secretAccessKey: process.env.NEXT_PUBLIC_S3_SECRET_ACCESS_KEY!,

@@ -11,7 +11,7 @@ import AWS from "aws-sdk";
             params: {
                 Bucket: process.env.NEXT_PUBLIC_S3_BUCKET_NAME, 
             },
-            region: 'us-east-2'
+            region: 'eu-north-1'
         });
         const params = {
             Bucket: process.env.NEXT_PUBLIC_S3_BUCKET_NAME!,
@@ -35,7 +35,7 @@ import AWS from "aws-sdk";
 //   return new Promise(async (resolve, reject) => {
 //     try {
 //       const s3 = new S3({
-//         region: "us-east-2",
+//         region: "eu-north-1",
 //         credentials: {
 //           accessKeyId: process.env.NEXT_PUBLIC_S3_ACCESS_KEY_ID!,
 //           secretAccessKey: process.env.NEXT_PUBLIC_S3_SECRET_ACCESS_KEY!,
